@@ -35,7 +35,6 @@ const SignUpForm = () => {
         try{
             //Authenticate user
             const {user} = await createAuthUserWithEmailAndPassword(email, password);
-            console.log(user);
             //Create user in firebase
             const userDocRef = await createUserDocumentFromAuth(user, { displayName });
             console.log(userDocRef);
