@@ -14,6 +14,8 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "reselect": "^5.0.1",
     "sass": "^1.67.0",
     "styled-components": "^6.1.1",
     "web-vitals": "^2.1.4"
