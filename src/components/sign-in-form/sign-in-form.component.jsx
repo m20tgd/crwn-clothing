@@ -1,11 +1,11 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import FormInput from '../form-input/form-input.component';
 import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
 
 import { 
     signInWithGooglePopUp,
-    createUserDocumentFromAuth ,
     signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils'
 
@@ -20,12 +20,19 @@ const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
 
+    const navigate = useNavigate();
+
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     }
 
     const signInWithGoogle = async () => {
         const {user} = await signInWithGooglePopUp();
+        navigateToHome();
+    }
+
+    const navigateToHome = () => {
+        navigate('/shop');
     }
 
     const handleSubmit = async event => {
